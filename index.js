@@ -32,24 +32,24 @@ module.exports = class Cofi {
 	guildCreate({ channel: canal, code: comando }) {
 		let ch = this.client.channels.cache.get(canal)
 		if(!ch) throw new TypeError("Canal não está no cache do bot!")
-		this.client.on("guildCreate", () => { ch.send(code) })
+		this.client.on("guildCreate", () => { ch.send(comando) })
 	}
 
 	guildDelete({ channel: canal, code: comando }) {
 		let ch = this.client.channels.cache.get(canal)
 		if(!ch) throw new TypeError("Canal não está no cache do bot!")
-		this.client.on("guildDelete", () => { ch.send(code) })
+		this.client.on("guildDelete", () => { ch.send(comando) })
 	}
 
 	guildMemberAdd({ channel: canal, code: comando }) {
 		let ch = this.client.channels.cache.get(canal)
 		if(!ch) throw new TypeError("Canal não está no cache do bot!")
-		this.client.on("guildMemberAdd", () => { ch.send(code) })
+		this.client.on("guildMemberAdd", () => { ch.send(comando) })
 	}
 
 	guildMemberRemove({ channel: canal, code: comando }) {
 		let ch = this.client.channels.cache.get(canal)
 		if(!ch) throw new TypeError("Canal não está no cache do bot!")
-		this.client.on("guildDelete", () => { ch.send(code) })
+		this.client.on("guildDelete", () => { ch.send(comando) })
 	}
 }
