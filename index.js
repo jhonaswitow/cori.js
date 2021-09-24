@@ -21,11 +21,11 @@ module.exports = class Cofi {
 
 	ready({ channel: canal, code: comando }) {
 		if(!canal) {
-		client.on("ready", () => { comando })
+		this.client.on("ready", () => { comando })
 		} else {
 			let ch = this.client.channels.cache.get(canal)
 			if(!ch) throw new TypeError("Canal não está no cache do bot!")
-		client.on("ready", () => { ch.send(comando) })
+		this.client.on("ready", () => { ch.send(comando) })
 		}
 	}
 
